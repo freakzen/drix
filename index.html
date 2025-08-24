@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberVault - Secure Password Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dr<span>ix</span></h1>
+            <p>Secure Password Management System</p>
+        </header>
+        
+        <div class="app-container">
+            <!-- Login Screen -->
+            <div id="login-screen">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <span class="terminal-title">Authentication Required</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-text">> Enter master password to access CyberVault</p>
+                    <p class="terminal-text">> Initializing security protocol...</p>
+                    
+                    <div class="alert" id="login-alert"></div>
+                    
+                    <form class="login-form" id="login-form">
+                        <div class="form-group">
+                            <label for="master-password">> Master Password:</label>
+                            <input type="password" id="master-password" required>
+                        </div>
+                        <button type="submit" class="hacker-btn">> Authenticate</button>
+                    </form>
+                    
+                    <p class="terminal-text" style="margin-top: 1.5rem;">
+                        > First access? Your input will become the master key.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Main Application Screen -->
+            <div id="app-screen">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <span class="terminal-title">CyberVault - Secure Access Granted</span>
+                </div>
+                
+                <div class="terminal-body">
+                    <div class="controls">
+                        <div class="search-box">
+                            <label for="search">> Search:</label>
+                            <input type="text" id="search" placeholder="Filter credentials...">
+                        </div>
+                        <div class="action-buttons">
+                            <button id="add-password-btn" class="hacker-btn">> Add New</button>
+                            <button id="export-btn" class="hacker-btn">> Export CSV</button>
+                            <button id="import-btn" class="hacker-btn">> Import CSV</button>
+                            <button id="change-master-btn" class="hacker-btn">> Change Master Key</button>
+                            <button id="logout-btn" class="hacker-btn logout">> Logout</button>
+                            <input type="file" id="import-file" accept=".csv" style="display: none;">
+                        </div>
+                    </div>
+                    
+                    <div class="alert" id="app-alert"></div>
+                    
+                    <h2>> Stored Credentials</h2>
+                    <ul class="password-list" id="password-list">
+                        <!-- Password items will be added here dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hacker-effect">
+            <div class="scanline"></div>
+            <div class="noise"></div>
+        </div>
+    </div>
+    
+    <!-- Add/Edit Password Modal -->
+    <div class="modal" id="password-modal">
+        <div class="modal-content hacker-modal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red" id="close-modal"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
+                </div>
+                <span class="terminal-title" id="modal-title">Add New Credential</span>
+            </div>
+            
+            <div class="terminal-body">
+                <form id="password-form">
+                    <input type="hidden" id="edit-id">
+                    
+                    <div class="form-group">
+                        <label for="service">> Service/Website:</label>
+                        <input type="text" id="service" required placeholder="e.g., Secure Server">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">> Username/Email:</label>
+                        <input type="text" id="username" required placeholder="Enter access ID">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">> Password:</label>
+                        <input type="text" id="password" required placeholder="Encryption key">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">> Notes (Optional):</label>
+                        <input type="text" id="notes" placeholder="Additional security notes">
+                    </div>
+                    
+                    <button type="submit" class="hacker-btn">> Save Credential</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Change Master Password Modal -->
+    <div class="modal" id="change-master-modal">
+        <div class="modal-content hacker-modal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn red" id="close-master-modal"></span>
+                    <span class="terminal-btn yellow"></span>
+                    <span class="terminal-btn green"></span>
+                </div>
+                <span class="terminal-title">Change Master Key</span>
+            </div>
+            
+            <div class="terminal-body">
+                <form id="change-master-form">
+                    <div class="form-group">
+                        <label for="current-master">> Current Master Key:</label>
+                        <input type="password" id="current-master" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="new-master">> New Master Key:</label>
+                        <input type="password" id="new-master" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-master">> Confirm New Key:</label>
+                        <input type="password" id="confirm-master" required>
+                    </div>
+                    
+                    <button type="submit" class="hacker-btn">> Update Master Key</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

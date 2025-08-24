@@ -1,0 +1,400 @@
+:root {
+    --primary-color: #0a0a0a;
+    --secondary-color: #00ff41;
+    --accent-color: #008f27;
+    --light-color: #003b15;
+    --dark-color: #001a09;
+    --text-color: #00ff41;
+    --error-color: #ff003c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+header h1 span {
+    color: #fff;
+}
+
+header p {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.app-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Terminal styling */
+.terminal-header {
+    background-color: var(--dark-color);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-btn.red {
+    background-color: #ff5f57;
+}
+
+.terminal-btn.yellow {
+    background-color: #ffbd2e;
+}
+
+.terminal-btn.green {
+    background-color: #28ca42;
+}
+
+.terminal-title {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+}
+
+.terminal-text {
+    margin-bottom: 1rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+}
+
+/* Login Screen */
+#login-screen {
+    display: block;
+}
+
+/* Main Application */
+#app-screen {
+    display: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-box {
+    flex-grow: 1;
+}
+
+.search-box label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.password-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.password-item {
+    background-color: var(--dark-color);
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid var(--light-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.password-item:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.password-details {
+    flex-grow: 1;
+}
+
+.password-details h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.password-details p {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.password-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--light-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+input::placeholder {
+    color: #008f27;
+    opacity: 0.6;
+}
+
+/* Buttons */
+.hacker-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hacker-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.hacker-btn:hover {
+    background-color: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
+
+.hacker-btn:hover::before {
+    left: 100%;
+}
+
+.hacker-btn.logout {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.hacker-btn.logout:hover {
+    background-color: rgba(255, 0, 60, 0.1);
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.3);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+}
+
+.hacker-modal {
+    background-color: rgba(10, 10, 10, 0.95);
+}
+
+/* Alert */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    display: none;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+}
+
+.alert-success {
+    background-color: rgba(0, 143, 39, 0.2);
+    color: #00ff41;
+    border: 1px solid var(--accent-color);
+}
+
+.alert-error {
+    background-color: rgba(255, 0, 60, 0.2);
+    color: #ff003c;
+    border: 1px solid var(--error-color);
+}
+
+/* Hacker effects */
+.hacker-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.scanline {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to bottom, transparent 0%, var(--secondary-color) 50%, transparent 100%);
+    position: absolute;
+    animation: scanline 10s linear infinite;
+    opacity: 0.1;
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+@keyframes scanline {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .password-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .password-actions {
+        margin-top: 1rem;
+        align-self: flex-end;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .hacker-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}

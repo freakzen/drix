@@ -1,0 +1,22 @@
+
+## Technologies Used
+
+- HTML5
+- CSS3 (with CSS Variables)
+- Vanilla JavaScript
+- Google Fonts (Share Tech Mono, VT323)
+
+## Browser Compatibility
+
+Works on all modern browsers that support:
+- LocalStorage API
+- ES6 JavaScript features
+- CSS Flexbox/Grid
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
