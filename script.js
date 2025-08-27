@@ -1,5 +1,5 @@
 // Simple encryption function (for demonstration purposes)
-// Note: This is a basic obfuscation, not military-grade encryption
+// Note: This is a basic obfuscation
 const simpleEncrypt = (text, key) => {
     let result = '';
     for (let i = 0; i < text.length; i++) {
@@ -53,12 +53,9 @@ const confirmMasterInput = document.getElementById('confirm-master');
 let masterPassword = '';
 let passwords = [];
 
-// Initialize the application
 const initApp = () => {
-    // Check if we have a master password hash in localStorage
     const masterHash = localStorage.getItem('masterPasswordHash');
     
-    // If no master password is set, update the login message
     if (!masterHash) {
         document.querySelector('.terminal-text:last-child').textContent = 
             '> First access detected. Your input will become the master key.';
@@ -76,8 +73,7 @@ const initApp = () => {
             passwords = [];
         }
     }
-    
-    // Event listeners
+ 
     loginForm.addEventListener('submit', handleLogin);
     addPasswordBtn.addEventListener('click', showAddModal);
     exportBtn.addEventListener('click', exportToCSV);
@@ -95,7 +91,7 @@ const initApp = () => {
     changeMasterForm.addEventListener('submit', changeMasterPassword);
     searchInput.addEventListener('input', filterPasswords);
     
-    // Close modals when clicking outside
+
     window.addEventListener('click', (e) => {
         if (e.target === passwordModal) {
             hideModal();
